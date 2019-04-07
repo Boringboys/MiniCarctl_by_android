@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        System.out.println("执行控制界面的onCreate()");
+
+
         socket = ((MySocket)getApplication()).getSocket();
         code = 0;
         speed = 0;
@@ -166,6 +169,42 @@ public class MainActivity extends AppCompatActivity {
         Thread_Receive thread_receive = new Thread_Receive();
         thread_receive.start();
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        System.out.println("执行控制界面的onStart()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("执行控制界面的onResume()");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("执行控制界面的onRestart()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        System.out.println("执行控制界面的onPause()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        System.out.println("执行控制界面的onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("执行控制界面的onDestroy()");
     }
 
     private class MyAsyncTask1 extends AsyncTask<int[],Integer,String>{

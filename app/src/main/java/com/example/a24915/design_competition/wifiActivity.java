@@ -33,6 +33,8 @@ public class wifiActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wifi_activity);
 
+        System.out.println("执行连接界面的onCreate()");
+
         listView=(ListView)findViewById(R.id.listview);
         listView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,mListStr));
 
@@ -78,6 +80,42 @@ public class wifiActivity extends AppCompatActivity{
         });
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        System.out.println("执行连接界面的onStart()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("执行连接界面的onResume()");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("执行连接界面的onRestart()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        System.out.println("执行连接界面的onPause()");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        System.out.println("执行连接界面的onStop()");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("执行连接界面的onDestroy()");
     }
 
     class Thread_connect extends Thread{
